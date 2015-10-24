@@ -102,10 +102,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <skip>true</skip>
                 </configuration>
             </plugin>
-        
+			
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+				  <descriptorRefs>
+					<descriptorRef>jar-with-dependencies</descriptorRef>
+				  </descriptorRefs>
+				</configuration>
+			</plugin>
+			
         </plugins>
     </build>
 	

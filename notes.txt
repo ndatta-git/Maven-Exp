@@ -52,3 +52,13 @@ $ mvn test -Dmaven.test.failure.ignore=true
 $ mvn install -Dmaven.test.skip=true
 
 +++
+
+$ mvn install assembly:assembly
+
+$ cd target
+$ java -cp simple-weather-1.0-jar-with-dependencies.jar \
+       org.sonatype.mavenbook.weather.Main 10002
+
+The jar-with-dependencies format creates a single JAR file that includes all of the bytecode from the simple-weather project as well as the unpacked bytecode from all of the dependencies. 
+
++++
