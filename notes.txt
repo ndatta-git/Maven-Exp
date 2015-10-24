@@ -1,0 +1,26 @@
+Velocity, Dom4J, and Jaxen were all located using the searching capability on http://repository.sonatype.org.
+This is a public Sonatype Nexus instance which provides a search interface to various public Maven repositories,
+
++++
+
+$ mvn install
+
+$ mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main
+
+$ mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main  -Dexec.args="70115"
+
+The Exec plugin allows you to execute Java classes and other scripts. It is not a core Maven plugin, but it is available from the Mojo project hosted by Codehaus. For a full description of the Exec plugin, run:
+
+$ mvn help:describe -Dplugin=exec -Dfull
+
++++
+
+If you need to find out what is on the classpath, you can use the Maven Dependency plugin to print out a list of dependencies.
+
+$ mvn dependency:resolve
+
+To know about the entire dependency tree of your project, you can run the dependency:tree goal.
+
+$ mvn dependency:tree
+
++++
