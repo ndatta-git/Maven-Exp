@@ -24,3 +24,31 @@ To know about the entire dependency tree of your project, you can run the depend
 $ mvn dependency:tree
 
 +++
+
+A test-scoped dependency is a dependency that is available on the classpath only during test compilation and test execution.
+
+$ mvn dependency:resolve
+
++++
+
+$ mvn test
+
+The Maven Surefire plugin has a test goal which is bound to the test phase. This test goal executes all of the unit tests this project can find under src/test/java with filenames matching **/Test*.java, **/*Test.java and **/*TestCase.java. it also generates XML and text reports in the ${basedir}/target/surefire-reports
+
+
+http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html
+
+testFailureIgnore  Set this to true to ignore a failure during
+                   testing. Its use is NOT RECOMMENDED, but quite
+                   convenient on occasion.
+
+* Type: boolean
+* Required: No
+* User Property: maven.test.failure.ignore
+This property can be set from the command line using the -D parameter:
+
+$ mvn test -Dmaven.test.failure.ignore=true
+
+$ mvn install -Dmaven.test.skip=true
+
++++
